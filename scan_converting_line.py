@@ -1,7 +1,15 @@
 from py_graphics import *
 import math
 
-win = GraphWin('DDA Algorithm', 640, 480)
+
+
+
+x0 = int(input("Insert x0 ")) # 1st point x coordinate
+y0 = int(input("Insert y0 ")) # 1st point y coordinate 
+x1 = int(input("Insert x1 ")) # 2nd point x coordinate
+y1 = int(input("Insert y1 ")) # 2nd point y coordinate 
+
+win = GraphWin('Scan converting line  Algorithm', 640, 480)
  
 
  
@@ -41,14 +49,11 @@ def Scanne_convert(x1,y1,x2,y2):
         x+=1   # x++
         y=m*x + b  # finding the y value 
 
-x1 = 100
-y1 = 20
-x2 = 250
-y2 = 140
 
 
 
-Scanne_convert(x1,y1,x2,y2)
+
+Scanne_convert(x0,y0,x1,y1)
 
 
 

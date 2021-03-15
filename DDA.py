@@ -1,6 +1,14 @@
 from py_graphics import *
 import math
 
+
+
+
+x0 = float(input("Insert x0 ")) # 1st point x coordinate
+y0 = float(input("Insert y0 ")) # 1st point y coordinate 
+x1 = float(input("Insert x1 ")) # 2nd point x coordinate
+y1 = float(input("Insert y1 ")) # 2nd point y coordinate 
+
 win = GraphWin('DDA Algorithm', 640, 480)
 
 
@@ -9,26 +17,18 @@ def slop(x1,y1,x2,y2):
     return((y2-y1)/(x2-x1))
 
 
-a1 = 100
-b1 = 150 
-a2 = 140
-b2 = 180
+a1 = int(x0)
+b1 = int(y0)
+a2 = int(x1)
+b2 = int(y1)
 
 
-c1 = 200
-d1 = 250
-c2 = 220
-d2 = 280
-
-e1 = 50
-f1 = 100
-e2 = 100
-f2 = 150
+ 
 
 def dda(x1,y1,x2,y2):
     m = slop(x1,y1,x2,y2)
 
-    if(abs(y2-y1)>abs(x2-x1)): # if m > 1 where m is slop  y will incriment by 1 
+    if(abs(y2-y1)>abs(x2-x1)): # if m > 1 where m is slop ; y will incriment by 1 
         while  y1<y2:  
             x1 += 1/m          # x1 = x1+1/m 
             y1 +=1 
@@ -37,7 +37,7 @@ def dda(x1,y1,x2,y2):
             tx1 = Text(Point(280,170)," m is > 1 so y will incriment by one  ")
             tx1.draw(win)
         
-    elif(abs(x2-x1)-abs(y2-y1)): # if m < 1 where m is slop  y will incriment by 1.
+    elif(abs(x2-x1)-abs(y2-y1)): # if m < 1 where m is slop;  y will incriment by 1.
          while  x1<x2:
             y1 += 1/m            # y1 = y1 + 1/m 
             x1 +=1
@@ -61,8 +61,7 @@ def dda(x1,y1,x2,y2):
 
 
 dda(a1,b1,a2,b2) 
-dda(c1,d1,c2,d2)
-dda(e1,f1,e2,f2)
+
 
 
 
